@@ -2034,8 +2034,6 @@ DIVISION K. NONCLASSIFIABLE ESTABLISHMENTS
         9999 NONCLASSIFIABLE ESTABLISHMENTS
 `;
 
-//const parsed = sic.split('\n').map(row => row.split(',')).map(([ x, naics, description ]) => ({ naics, description }));
-
 const parsed = sic.split('\n').filter(r => !r.match(/^$/)).map(r => r.trim()).filter(r => r.match(/\d/)).map(r => {
 	const [ sic, ...words ] = r.split(' ');
 	const cleanWords = words.map(w => {
